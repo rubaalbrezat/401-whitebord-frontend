@@ -1,4 +1,6 @@
+import Header from "./components/Header";
 import Main from "./components/Main";
+import Footer from "./components/Footer";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
@@ -113,7 +115,7 @@ function App() {
 
   return (
     <>
-     
+      <Header x={logout} loggedin={loggedin} />
       {!loggedin && <Log sifunc={signin} sufunc={signup} />}
       {loggedin && (
         <Main
@@ -124,7 +126,7 @@ function App() {
           apfunc={addPost}
         />
       )}
-    
+      <Footer />
     </>
   );
 }
